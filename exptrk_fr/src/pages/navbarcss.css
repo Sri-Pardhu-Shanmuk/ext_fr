@@ -1,0 +1,261 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 7, 17);
+    padding: 0 5%;
+    height: 70px;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: solid 1px rgba(24, 31, 42);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    
+}
+
+/* LEFT */
+.logo-heading{
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.et-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+    background-color: rgba(54, 58, 208);
+    color: white;
+    border-radius: 5px;
+}
+
+.navbar-title{
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: white;
+    white-space: nowrap;
+}
+
+/* CENTER */
+.navbar-links{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-links ul{
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.navbar-links ul li a{
+    color: white;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.navbar-links ul li a:hover{
+    color: rgba(54, 58, 208);
+    text-decoration: underline;
+    text-underline-offset: 1rem;
+    text-decoration-color: rgba(54, 58, 208);
+}
+
+/* RIGHT */
+.navbar-user-info{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.navbar-user{
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.navbar-user-logo{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    font-weight: bold;
+}
+
+.navbar-username{
+    color: white;
+    font-size: 0.9rem;
+}
+
+.navbar-button{
+    background-color: transparent;
+    color: white;
+    border: solid 2px rgba(24, 31, 42);
+    padding: 0.3rem 0.6rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    justify-content: space-between;
+}
+
+.navbar-button:hover{
+    background-color: rgba(24, 31, 42);
+    color: white;
+    
+}
+
+.navbar-button:active{
+    background-color: rgba(24, 31, 42);
+    color: white;
+    
+    transform: scale(0.95);
+}
+
+/* HAMBURGER */
+.hamburger{
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+    
+}
+
+.hamburger span{
+    width: 22px;
+    height: 2px;
+    background: white;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+/* ANIMATION */
+.hamburger.open span:nth-child(1){
+    transform: rotate(45deg) translate(4px, 4px);
+}
+
+.hamburger.open span:nth-child(2){
+    opacity: 0;
+}
+
+.hamburger.open span:nth-child(3){
+    transform: rotate(-45deg) translate(4px, -4px);
+}
+
+/* MOBILE */
+@media (max-width: 768px){
+
+    .navbar{
+        height: 60px;
+        
+    }
+
+    .navbar-links{
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        background: rgba(0, 7, 17, 0.95);
+        flex-direction: column;
+        align-items: center;
+        transform: translateY(-200%);
+        opacity: 0;
+        transition: 0.3s;
+    }
+
+    .navbar-links.active{
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .navbar-links ul{
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 0;
+    }
+
+    .navbar-username{
+        display: none;
+    }
+
+    .hamburger{
+        display: flex;
+       
+    }
+}
+
+
+@media (max-width: 480px){
+
+    .navbar{
+        padding: 0 3%;
+    }
+
+    .navbar-title{
+        font-size: 1rem;
+    }
+
+    /* Logo */
+
+    .et-logo{
+        width: 1.7rem;
+        height: 1.7rem;
+        font-size: 0.8rem;
+        flex-shrink: 0;
+    }
+
+    .logo-heading{
+        gap: 0.5rem;
+    }
+
+    /* Logout Button */
+
+    .navbar-button{
+        padding: 0.35rem 0.45rem;
+        font-size: 0.8rem;
+        gap: 0.2rem;
+        flex-shrink: 0;
+    }
+
+    .navbar-button svg{
+        width: 16px;
+        height: 16px;
+    }
+
+    /* User Info */
+
+    .navbar-user-info{
+        gap: 0.7rem;
+    }
+
+    .navbar-user-logo{
+        width: 1.8rem;
+        height: 1.8rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 360px){
+
+    .navbar-button span{
+        display: none;
+    }
+
+    .navbar-button{
+        padding: 0.4rem;
+    }
+}

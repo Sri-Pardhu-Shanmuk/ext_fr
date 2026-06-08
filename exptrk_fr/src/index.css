@@ -1,0 +1,62 @@
+/* 1. Reset default spacing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 2. Set full height */
+html, body {
+  height: 100vh;
+}
+
+/* 3. Body defaults */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #0f0f0f;
+  color: white;
+ 
+}
+
+/* 4. Images */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* 5. Links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 6. Buttons */
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+/* 7. Lists */
+ul, ol {
+  list-style: none;
+}
+
+
+
+
+
+
+
+/* Chrome, Safari, Edge */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+    appearance: textfield;
+    -moz-appearance: textfield;
+}

@@ -1,0 +1,1228 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.dashboard{
+    display:flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: rgba(0, 7, 20);
+    padding: 0 0;
+    padding-top: 4.5rem;
+}
+
+/* ================= SECTION 1 ================= */
+
+.s-1{
+    display: flex;
+    width: 100%;
+    height: 3.5rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.1rem;
+}
+
+.s-1 button{
+    background-color: rgba(47, 56, 211);
+    color: white;
+    border: solid 2px rgba(24, 31, 42);
+    padding: 0.3rem 0.6rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+}
+
+.s-1 button:hover{
+    opacity: 0.8;
+    transform: scale(1.05);
+}
+
+.s-1 button:active{
+    opacity: 1;
+    transform: scale(0.95);
+}
+
+
+
+/* ================= POPUP ================= */
+
+
+.popup-overlay{
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup{
+    background-color: #070f1a;
+    padding: 1.5rem;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    border: solid 1px #18212b;
+}
+
+.popup-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.close-btn{
+    background: transparent;
+    border: none;
+    color: #777;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.popup-r1{
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    flex: 1;
+}
+
+.in-ex-btns{
+    display: flex;
+    gap:0.1rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.in-ex-btns button{
+    flex: 1;
+    height: 2.5rem;
+    border-radius: 5px;
+    border: solid 1px #18212b;
+    background-color: transparent;
+    color: white;
+}
+
+
+.form-group input,select{
+    height: 2.5rem;
+    padding: 0.3rem;
+    border-radius: 5px;
+    border: solid 1px #18212b;
+    background-color: transparent;
+    color: white;
+}
+
+
+.form-group select option{
+    background-color: #070f1a;
+    color: white;
+}
+
+.active-income{
+    background-color: rgb(5, 231, 69) !important;
+    color: white;
+}
+
+.active-expense{
+    background-color: rgba(211, 47, 47) !important;
+    color: white;
+}
+
+
+
+
+.popup-r2{
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+.popup-r3{
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+
+.popup-footer{
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.popup-footer button{
+    width: 50%;
+    height: 2.8rem;
+    border-radius: 5px;
+    border: solid 1px #18212b;
+}
+
+.cancel-btn{
+    background-color: transparent;
+    color:white;
+}
+
+.add-btn{
+    background-color: rgba(47, 56, 211);
+    color: white;
+}
+
+
+
+/*================== POPUP RESPONSIVE ==================*/
+
+/* =========================
+   LARGE TABLETS
+========================= */
+
+@media (max-width: 900px){
+
+    .popup{
+        width: 95%;
+        padding: 1.3rem;
+    }
+
+    .popup-r1,
+    .popup-r2,
+    .popup-r3{
+        gap: 0.8rem;
+    }
+
+}
+
+/* =========================
+   MOBILE DEVICES
+========================= */
+
+@media (max-width: 600px){
+
+    .popup-overlay{
+        padding: 1rem;
+        align-items: center;
+        justify-content: center;
+        overflow-y: auto;
+    }
+
+    .popup{
+        width: 100%;
+        padding: 1rem;
+        margin-top: 2rem;
+        border-radius: 12px;
+    }
+
+    .popup-header{
+        margin-bottom: 1rem;
+    }
+
+    .popup-header h2{
+        font-size: 1.1rem;
+    }
+
+    /* STACK ALL ROWS */
+
+    .popup-r1,
+    .popup-r2,
+    .popup-r3{
+        flex-direction: column;
+        gap: 0.9rem;
+    }
+
+    .form-group{
+        width: 100%;
+    }
+
+    .form-group label{
+        font-size: 0.85rem;
+    }
+
+    .form-group input,
+    .form-group select{
+        width: 100%;
+        height: 2.7rem;
+        font-size: 0.95rem;
+        padding: 0.3rem 0.7rem;
+    }
+
+    .in-ex-btns{
+        gap: 0.5rem;
+    }
+
+    .in-ex-btns button{
+        height: 2.7rem;
+        font-size: 0.9rem;
+    }
+
+    .popup-footer{
+        flex-direction: column;
+        gap: 0.7rem;
+    }
+
+    .popup-footer button{
+        width: 100%;
+        height: 2.7rem;
+    }
+
+}
+
+/* =========================
+   EXTRA SMALL DEVICES
+========================= */
+
+@media (max-width: 400px){
+
+    .popup{
+        padding: 0.9rem;
+    }
+
+    .popup-header h2{
+        font-size: 1rem;
+    }
+
+    .close-btn svg{
+        width: 1.1rem;
+        height: 1.1rem;
+    }
+
+    .form-group label{
+        font-size: 0.8rem;
+    }
+
+    .form-group input,
+    .form-group select{
+        height: 2.5rem;
+        font-size: 0.85rem;
+        padding: 0.3rem 0.6rem;
+    }
+
+    .in-ex-btns button{
+        height: 2.5rem;
+        font-size: 0.85rem;
+    }
+
+    .popup-footer button{
+        height: 2.5rem;
+        font-size: 0.85rem;
+    }
+
+}
+
+/* ================= END OF POPUP ================== */
+
+
+/* ================= SECTION 2 ================= */
+
+.s-2{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.3rem 1.5rem;
+    margin-bottom: 0.1rem;
+    gap: 1rem;
+}
+
+.card{
+    width: 25%;
+    min-height: 8rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.3rem 1rem;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card:nth-child(1){
+    background: linear-gradient(135deg,rgba(8, 16, 41),rgba(13, 20, 65));
+    color: white;
+    border: solid 1px rgb(55, 82, 124);
+}
+
+.card:nth-child(2){
+    background: linear-gradient(135deg,rgba(5, 17, 24),rgba(2, 32, 28));
+    color: white;
+    border: solid 1px rgb(47, 77, 52);
+}
+
+.card:nth-child(3){
+    background: linear-gradient(135deg,rgba(19, 12, 20),rgba(35, 15, 23));
+    color: white;
+    border: solid 1px rgb(86, 43, 43);
+}
+
+.details{
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    width: 80%;
+}
+
+.details p{
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.details h4{
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.icon{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.card:nth-child(1) .icon{
+    background: #4332e2;
+    box-shadow: 0 0 15px #4d50df;
+}
+
+.card:nth-child(2) .icon{
+    background: #029f52;
+    box-shadow: 0 0 15px #059669;
+}
+
+.card:nth-child(3) .icon{
+    background: #dc2626;
+    box-shadow: 0 0 15px #ef4444;
+}
+
+/* ================= SECTION 3 ================= */
+
+.s-3{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0.7rem 1.5rem;
+    margin-bottom: 0.5rem;
+    gap: 0.5rem;
+    border-bottom: solid 1px rgba(24, 31, 42);
+}
+
+.cards-container{
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.cards-container .card{
+    background: #070f1a;
+    color: white;
+    border: solid 1px #18212b;
+    flex-shrink: 0;
+}
+
+.cards-container .details{
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    width: 60%;
+}
+
+.trend-positive,
+.trend-negative{
+    display: flex;
+    width: 24%;
+    min-width: 4rem;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.trend-positive{
+    color: #02b960;
+}
+
+.trend-negative{
+    color: #d43427;
+}
+
+.trend-positive svg,
+.trend-negative svg{
+    width: 3.2rem;
+    height: 3.2rem;
+    stroke-width: 2.5;
+}
+
+.trend-positive svg{
+    filter: drop-shadow(0 0 5px rgba(0,255,136,0.6));
+}
+
+.trend-negative svg{
+    filter: drop-shadow(0 0 5px rgba(212,52,39,0.6));
+}
+
+.percentage-bar{
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* ================= SECTION 4 ================= */
+
+.s-4{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex: 1;
+    padding: 0.1rem 1.5rem;
+}
+
+.transactions{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.transactions-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.transactions-header button{
+    background: transparent;
+    border: 1px solid rgba(24, 31, 42);
+    padding: 0.3rem 0.7rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.transactions-header button:hover{
+    background-color: rgba(24, 31, 42);
+    opacity: 0.8;
+    transform: scale(1.05);
+}
+
+.transactions-header button:active{
+    transform: scale(0.95);
+}
+
+.transaction-list{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.transaction-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.7rem 0.5rem;
+    border-bottom: 1px solid #18212b;
+    gap: 1rem;
+}
+
+.transaction-item:nth-child(1){
+    border-top: 1px solid #18212b;
+}
+
+.left{
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    width: 40%;
+    min-width: 0;
+}
+
+.tx-icon{
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 6px;
+    background-color: #4332e2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    box-shadow: 0 0 15px #4d50df;
+    flex-shrink: 0;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.info p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.info span{
+    font-size: 0.75rem;
+    color: #777;
+}
+
+.date{
+    width: 30%;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.amount{
+    width: 30%;
+    text-align: right;
+    font-weight: 500;
+    flex-shrink: 0;
+}
+
+.amount.positive{
+    color: green;
+}
+
+.amount.negative{
+    color: red;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* ---------- LARGE TABLETS ---------- */
+
+@media (max-width: 1100px){
+
+    .s-2 .card,
+    .cards-container .card{
+        width: 32%;
+    }
+
+}
+
+/* ---------- TABLETS ---------- */
+
+@media (max-width: 900px){
+
+    .s-1{
+        flex-wrap: wrap;
+        height: auto;
+        gap: 0.8rem;
+        padding: 0.8rem 1rem;
+    }
+
+    .s-2{
+        flex-wrap: wrap;
+        padding: 0.5rem 1rem;
+    }
+
+    .s-2 .card{
+        width: 48%;
+    }
+
+    .s-3{
+        padding: 0.5rem 1rem;
+    }
+
+    .cards-container{
+        flex-wrap: wrap;
+    }
+
+    .cards-container .card{
+        width: 48%;
+    }
+
+    .s-4{
+        padding: 0.5rem 1rem;
+    }
+
+
+    .transaction-item
+    {
+        min-width: 0 !important;
+    }
+
+    .transactions-header{
+        margin: 0.5rem 0;
+        display: flex;
+        flex-direction: row !important;
+    }
+
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 600px){
+
+    .dashboard{
+        padding-top: 4.8rem;
+    }
+
+    .s-1{
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        gap: 0.8rem;
+        padding: 0.8rem;
+    }
+
+    .s-1 h3{
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+
+    .s-1 button{
+        width: 100%;
+        height: 2.8rem;
+    }
+
+    /* SECTION 2 */
+
+    .s-2{
+        flex-direction: column;
+        padding: 0.5rem 0.8rem;
+    }
+
+    .s-2 .card{
+        width: 100%;
+        min-height: 7rem;
+    }
+
+    /* SECTION 3 */
+
+    .s-3{
+        padding: 0.5rem 0.8rem;
+    }
+
+    .heading h3{
+        font-size: 1rem;
+    }
+
+    .cards-container{
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .cards-container .card{
+        width: 100%;
+        min-height: 7rem;
+    }
+
+    .details h4{
+        font-size: 1.5rem;
+    }
+
+    .trend-positive svg,
+    .trend-negative svg{
+        width: 2.3rem;
+        height: 2.3rem;
+    }
+
+    .percentage-bar{
+        width: 4rem;
+        height: 4rem;
+    }
+
+    /* SECTION 4 */
+
+    .s-4{
+        padding: 0.5rem 0.8rem;
+    }
+
+    .transactions-header{
+        margin: 0.5rem 0;
+        display: flex;
+        flex-direction: row !important;
+    }
+
+    .transaction-item{
+        gap: 0.5rem;
+        padding: 0.9rem 0.2rem;
+    }
+
+    .transaction-item
+    {
+        min-width: 0 !important;
+    }
+
+    .left{
+        width: 65%;
+    }
+
+    .date{
+        display: none;
+    }
+
+    .amount{
+        width: auto;
+        font-size: 0.9rem;
+    }
+
+    .tx-icon{
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .tx-icon svg{
+        width: 1rem;
+        height: 1rem;
+    }
+
+}
+
+/* ---------- EXTRA SMALL ---------- */
+
+@media (max-width: 400px){
+
+    .details h4{
+        font-size: 1.2rem;
+    }
+
+    .details p{
+        font-size: 0.78rem;
+    }
+
+    .icon{
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .icon svg{
+        width: 1.2rem;
+        height: 1.2rem;
+    }
+
+    .transactions-header{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.6rem;
+    }
+
+ .transaction-item
+    {
+        min-width: 0 !important;
+    }
+
+    .transactions-header button{
+        width: 100%;
+    }
+
+    .left{
+        width: 70%;
+    }
+
+    .amount{
+        font-size: 0.82rem;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================= NO TRANSACTIONS UI ================= */
+
+.no-transactions{
+    width: 100%;
+    min-height: 16rem;
+    border: 1px dashed #243041;
+    border-radius: 16px;
+    background:
+    linear-gradient(
+        145deg,
+        rgba(8, 16, 41, 0.45),
+        rgba(7, 15, 26, 0.9)
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1.3rem;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.no-transactions::before{
+    content: "";
+    position: absolute;
+    width: 12rem;
+    height: 12rem;
+    background: rgba(91, 95, 255, 0.06);
+    filter: blur(70px);
+    border-radius: 50%;
+    top: -2rem;
+    right: -2rem;
+}
+
+.no-transactions-icon{
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+    background:
+    linear-gradient(
+        135deg,
+        rgba(91, 95, 255, 0.18),
+        rgba(67, 50, 226, 0.35)
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #7c82ff;
+    box-shadow: 0 0 25px rgba(91,95,255,0.18);
+    z-index: 1;
+}
+
+.no-transactions-icon svg{
+    width: 2rem;
+    height: 2rem;
+}
+
+.no-transactions h2{
+    font-size: 1.35rem;
+    color: white;
+    z-index: 1;
+}
+
+.no-transactions p{
+    max-width: 24rem;
+    color: #8b97a8;
+    line-height: 1.5;
+    font-size: 0.88rem;
+    z-index: 1;
+}
+
+.empty-add-btn{
+    height: 2.7rem;
+    padding: 0 1rem;
+    border: none;
+    border-radius: 10px;
+    background:
+    linear-gradient(
+        135deg,
+        #4f46e5,
+        #5b5fff
+    );
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    z-index: 1;
+}
+
+.empty-add-btn:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(91,95,255,0.25);
+}
+
+.empty-add-btn:active{
+    transform: scale(0.96);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 600px){
+
+    .no-transactions{
+        min-height: 14rem;
+        padding: 1rem;
+    }
+
+    .no-transactions h2{
+        font-size: 1.1rem;
+    }
+
+    .no-transactions p{
+        font-size: 0.82rem;
+    }
+
+    .no-transactions-icon{
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .empty-add-btn{
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVE POLISH (360px AND BELOW)
+========================================= */
+
+@media (max-width: 480px){
+
+    .dashboard{
+        padding-top: 4.7rem;
+    }
+
+    .s-1{
+        padding: 0.7rem;
+        gap: 0.7rem;
+    }
+
+    .s-1 h3{
+        font-size: 0.95rem;
+        word-break: break-word;
+    }
+
+    .s-2,
+    .s-3,
+    .s-4{
+        padding-left: 0.7rem;
+        padding-right: 0.7rem;
+    }
+
+    .card{
+        padding: 0.8rem;
+    }
+
+    .details{
+        width: calc(100% - 3.2rem);
+    }
+
+    .details h4{
+        font-size: 1.25rem;
+        word-break: break-word;
+    }
+
+    .details p{
+        font-size: 0.8rem;
+    }
+
+    .icon{
+        width: 2.6rem;
+        height: 2.6rem;
+    }
+
+    .icon svg{
+        width: 1.2rem;
+        height: 1.2rem;
+    }
+
+    .cards-container .details{
+        width: 55%;
+    }
+
+    .percentage-bar{
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    .trend-positive svg,
+    .trend-negative svg{
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .transactions-header h3{
+        font-size: 1rem;
+    }
+
+    .transaction-item{
+        padding: 0.8rem 0;
+    }
+
+    .left{
+        width: 68%;
+    }
+
+    .info p{
+        font-size: 0.85rem;
+    }
+
+    .info span{
+        font-size: 0.7rem;
+    }
+
+    .amount{
+        font-size: 0.8rem;
+    }
+}
+
+
+/* =========================================
+   VERY SMALL DEVICES (360px AND BELOW)
+========================================= */
+
+@media (max-width: 360px){
+
+    .dashboard{
+        padding-top: 4.6rem;
+    }
+
+    .s-1{
+        padding: 0.6rem;
+    }
+
+    .s-1 h3{
+        font-size: 0.88rem;
+    }
+
+    .s-1 button{
+        height: 2.5rem;
+        font-size: 0.82rem;
+    }
+
+    .card{
+        min-height: 6rem;
+        padding: 0.7rem;
+    }
+
+    .details{
+        gap: 0.15rem;
+    }
+
+    .details h4{
+        font-size: 1.05rem;
+        line-height: 1.2;
+    }
+
+    .details p{
+        font-size: 0.72rem;
+    }
+
+    .icon{
+        width: 2.3rem;
+        height: 2.3rem;
+    }
+
+    .icon svg{
+        width: 1rem;
+        height: 1rem;
+    }
+
+    .trend-positive svg,
+    .trend-negative svg{
+        width: 1.7rem;
+        height: 1.7rem;
+    }
+
+    .percentage-bar{
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .heading h3{
+        font-size: 0.9rem;
+    }
+
+    .transactions-header{
+        gap: 0.5rem;
+    }
+
+    .transactions-header h3{
+        font-size: 0.9rem;
+    }
+
+    .transactions-header button{
+        font-size: 0.75rem;
+        height: 2.2rem;
+    }
+
+    .left{
+        width: 72%;
+        gap: 0.4rem;
+    }
+
+    .tx-icon{
+        width: 1.8rem;
+        height: 1.8rem;
+    }
+
+    .tx-icon svg{
+        width: 0.9rem;
+        height: 0.9rem;
+    }
+
+    .info p{
+        font-size: 0.78rem;
+    }
+
+    .info span{
+        font-size: 0.65rem;
+    }
+
+    .amount{
+        font-size: 0.72rem;
+    }
+
+    .no-transactions{
+        min-height: 12rem;
+        padding: 0.9rem;
+    }
+
+    .no-transactions-icon{
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    .no-transactions-icon svg{
+        width: 1.6rem;
+        height: 1.6rem;
+    }
+
+    .no-transactions h2{
+        font-size: 1rem;
+    }
+
+    .no-transactions p{
+        font-size: 0.75rem;
+        line-height: 1.4;
+    }
+
+    .empty-add-btn{
+        height: 2.4rem;
+        font-size: 0.8rem;
+    }
+}

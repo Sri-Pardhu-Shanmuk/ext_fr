@@ -1,0 +1,1 @@
+postgresql://expense_tracker_g6jo_user:jokTmNleTDsrtDRLZR3T0ogcvIzkZJiC@dpg-d8gmev28qa3s739h4v8g-a.oregon-postgres.render.com/expense_tracker_g6jo
